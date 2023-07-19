@@ -1,11 +1,14 @@
-﻿using System;
-namespace OOPS
+﻿using OOPs.DataInventoryManagement;
+using System;
+namespace OOPs
 {
-    internal class Program
+    class program
     {
-        private static void Main(string[] args)
+        static string inventory_filepath = @"D:\Bridgelabz Statement\OOPS\OOPS\OOPS\DataInventoryManagement\InventoryData.json";
+        static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            InventoryDataOperation details = new InventoryDataOperation();
+            details.ReadInventoryJson(inventory_filepath);
         }
-    } 
+    }
 }
