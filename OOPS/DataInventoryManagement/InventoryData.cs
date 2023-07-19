@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPs.DataInventoryManagement
+namespace OOPS.DataInventoryManagement
 {
     internal class InventoryData
     {
