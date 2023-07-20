@@ -1,6 +1,7 @@
 ﻿using OOPS.DataInventoryManagement;
 using OOPS.InventoryManagement;
 using OOPS.InventoryManagement;
+using OOPS.StockMarket;
 using System;
 using System.Collections;
 using System.Security.AccessControl;
@@ -10,10 +11,10 @@ namespace OOPS
     class program
     {
         static string inventory_filepath = @"D:\Bridgelabz Statement\OOPS\OOPS\OOPS\InventoryManagement\InventoryManagementData.json";
-        static string inventory_filepath1 = @"D:\Bridgelabz Statement\OOPS\OOPS\OOPS\DataInventoryManagement\InventoryData.json";
+        static string inventory_filepath1 = @"D:\Bridgelabz Statement\OOPS\OOPS\OOPS\StockMarket\CompanyBlock.json";
         static void Main()
         {
-            InventoryDataOperation details1 = new InventoryDataOperation();
+            CompanyBlockOperation details1 = new CompanyBlockOperation();
             InventoryManagementOperation details = new InventoryManagementOperation();
             bool flag = true;
             while (flag)
