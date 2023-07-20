@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace OOPS.InventoryManagement
 {
@@ -25,36 +26,130 @@ namespace OOPS.InventoryManagement
         }
         public void AddInventoryManagement(string objectName)
         {
+            InventoryData details = new InventoryData()
+            {
+                Name = Console.ReadLine(),
+                Weight = Convert.ToInt32(Console.ReadLine()),
+                PricePerKg = Convert.ToInt32(Console.ReadLine()),
+            };
             if (objectName.ToLower().Equals("rice"))
             {
-                InventoryData data = new InventoryData()
-                {
-                    Name = Console.ReadLine(),
-                    Weight = Convert.ToInt32(Console.ReadLine()),
-                    PricePerKg = Convert.ToInt32(Console.ReadLine()),
-                };
-                list.Ricelist.Add(data);
+                list.Ricelist.Add(details);
+                Console.WriteLine("The Data is Added");
             }
             if (objectName.ToLower().Equals("wheat"))
             {
-                InventoryData data = new InventoryData()
-                {
-                    Name = Console.ReadLine(),
-                    Weight = Convert.ToInt32(Console.ReadLine()),
-                    PricePerKg = Convert.ToInt32(Console.ReadLine()),
-                };
-                list.Wheatlist.Add(data);
+                list.Wheatlist.Add(details);
+                Console.WriteLine("The Data is Added");
             }
             if (objectName.ToLower().Equals("pulses"))
             {
-                InventoryData data = new InventoryData()
-                {
-                    Name = Console.ReadLine(),
-                    Weight = Convert.ToInt32(Console.ReadLine()),
-                    PricePerKg = Convert.ToInt32(Console.ReadLine()),
-                };
-                list.Pulseslist.Add(data);
+                list.Pulseslist.Add(details);
+                Console.WriteLine("The Data is Added");
             }
+        }
+        public void DeleteInventoryManagement(string objectName,string InventoryName)
+        {
+            InventoryData details = new InventoryData();
+            if (objectName.ToLower().Equals("rice"))
+            {
+                foreach(var data in list.Ricelist)
+                {
+                    if (data.Name.Equals(InventoryName))
+                        details = data;
+                }
+                if(details != null)
+                    list.Ricelist.Remove(details);
+                    Console.WriteLine("The Data is Removed");
+            }
+            if (objectName.ToLower().Equals("wheat"))
+            {
+                foreach (var data in list.Wheatlist)
+                {
+                    if (data.Name.Equals(InventoryName))
+                        details = data;
+                }
+                if (details != null)
+                    list.Wheatlist.Remove(details);
+                    Console.WriteLine("The Data is Removed");
+            }
+            if (objectName.ToLower().Equals("pulses"))
+            {
+                foreach (var data in list.Pulseslist)
+                {
+                    if (data.Name.Equals(InventoryName))
+                        details = data;
+                }
+                if (details != null)
+                    list.Pulseslist.Remove(details);
+                    Console.WriteLine("The Data is Removed");
+            }
+            if (details == null)
+                Console.WriteLine("No Inventory Details Exists");
+        }
+
+        public void EditInventoryManagement(string objectName, string InventoryName)
+        {
+            InventoryData details = new InventoryData();
+            if (objectName.ToLower().Equals("rice"))
+            {
+                foreach (var data in list.Ricelist)
+                {
+                    if (data.Name.Equals(InventoryName))
+                        details = data;
+                }
+                if (details != null)
+                { 
+                    Console.WriteLine("Write the Edited Ricename,Weight,Price per Kg");
+                    string Name = Console.ReadLine();
+                    int Weight = Convert.ToInt32(Console.ReadLine());
+                    int PricePerKg = Convert.ToInt32(Console.ReadLine());
+                    details.Name = Name;
+                    details.Weight = Weight;
+                    details.PricePerKg = PricePerKg;
+                    Console.WriteLine("The Data is Edited");
+                } 
+            }
+            if (objectName.ToLower().Equals("wheat"))
+            {
+                foreach (var data in list.Wheatlist)
+                {
+                    if (data.Name.Equals(InventoryName))
+                        details = data;
+                }
+                if (details != null)
+                {
+                    Console.WriteLine("Write the Edited wheatname,Weight,Price per Kg");
+                    string Name = Console.ReadLine();
+                    int Weight = Convert.ToInt32(Console.ReadLine());
+                    int PricePerKg = Convert.ToInt32(Console.ReadLine());
+                    details.Name = Name;
+                    details.Weight = Weight;
+                    details.PricePerKg = PricePerKg;
+                    Console.WriteLine("The Data is Edited");
+                }
+            }
+            if (objectName.ToLower().Equals("pulses"))
+            {
+                foreach (var data in list.Pulseslist)
+                {
+                    if (data.Name.Equals(InventoryName))
+                        details = data;
+                }
+                if (details != null)
+                {
+                    Console.WriteLine("Write the Edited Pulsesname,Weight,Price per Kg");
+                    string Name = Console.ReadLine();
+                    int Weight = Convert.ToInt32(Console.ReadLine());
+                    int PricePerKg = Convert.ToInt32(Console.ReadLine());
+                    details.Name = Name;
+                    details.Weight = Weight;
+                    details.PricePerKg = PricePerKg;
+                    Console.WriteLine("The Data is Edited");
+                }
+            }
+            if (details == null)
+                Console.WriteLine("No Inventory Details Exists");
         }
         public void WriteToJsonFile(string filepath)
         {
