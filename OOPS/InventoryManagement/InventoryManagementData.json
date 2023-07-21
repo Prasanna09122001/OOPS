@@ -1,1 +1,38 @@
-{"Ricelist":[{"Name":"Rice 1","Weight":80,"PricePerKg":20},{"Name":"Rice 2","Weight":100,"PricePerKg":40}],"Wheatlist":[{"Name":"Wheat 1","Weight":100,"PricePerKg":40},{"Name":"Wheat 2","Weight":80,"PricePerKg":20}],"Pulseslist":[{"Name":"Pulses 1","Weight":100,"PricePerKg":40},{"Name":"Pulses 2","Weight":100,"PricePerKg":40}]}
+{
+  "Ricelist": [
+    {
+      "Name": "Rice 1",
+      "Weight": 80,
+      "PricePerKg": 20
+    },
+    {
+      "Name": "Rice 2",
+      "Weight": 100,
+      "PricePerKg": 40
+    }
+  ],
+  "Wheatlist": [
+    {
+      "Name": "Wheat 1",
+      "Weight": 100,
+      "PricePerKg": 40
+    },
+    {
+      "Name": "Wheat 2",
+      "Weight": 80,
+      "PricePerKg": 20
+    }
+  ],
+  "Pulseslist": [
+    {
+      "Name": "Pulses 1",
+      "Weight": 100,
+      "PricePerKg": 40
+    },
+    {
+      "Name": "Pulses 2",
+      "Weight": 100,
+      "PricePerKg": 40
+    }
+  ]
+}
